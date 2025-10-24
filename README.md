@@ -2,7 +2,9 @@
 
 A highly configurable Vue 3 rich text editor built on [Tiptap](https://tiptap.dev/).
 
-📺 **[View Live Demo](demo/)** | 📖 **[中文文档](README_CN.md)**
+📺 **[View Live Demo](#-demo)** | 📖 **[中文文档](README_CN.md)**
+
+![Tiptap Vue Editor](screenshots/basic-usage.png)
 
 ## ✨ Features
 
@@ -223,17 +225,31 @@ locale.value = 'zh-tw'  // 繁體中文
 
 ## 🎮 Demo
 
-Run the development server to see the demo:
+Run the development server to see the interactive demo:
 
 ```bash
 npm run dev
 ```
 
-The demo includes:
-- **Basic Usage** - Simple editor setup
-- **Configurable Toolbar** - Toggle any toolbar button  
-- **Custom Buttons** - Add your own buttons
-- **Read-only Mode** - Content protection
+### Demo Features
+
+**📝 Basic Usage**
+
+![Basic Usage Demo](screenshots/basic-usage.png)
+
+A simple editor with full toolbar featuring:
+- Rich text formatting (bold, italic, underline, etc.)
+- Paragraph styles and headings
+- Text colors and highlights
+- Lists and alignment
+- Links, images, and media
+- Tables and code blocks
+- Character and word count
+
+**🔧 Other Demos:**
+- **Configurable Toolbar** - Toggle any toolbar button on/off
+- **Custom Buttons** - Add your own custom functionality
+- **Read-only Mode** - Content protection and viewing
 
 ## 📄 License
 
