@@ -223,19 +223,19 @@ locale.value = 'zh-tw'  // 繁體中文
 
 ## 🎮 Demo
 
-Run the interactive demo locally:
+Open the demo in your browser:
 
 ```bash
-npm run demo
+# Simply open the HTML file
+open demo/index.html
+# Or double-click demo/index.html
 ```
 
-Or explore the demos:
+The demo includes:
 - **Basic Usage** - Simple editor setup
 - **Configurable Toolbar** - Toggle any toolbar button
 - **Custom Buttons** - Add your own buttons
 - **Read-only Mode** - Content protection
-
-[View Demo Documentation](demo/README.md)
 
 ## 📄 License
 

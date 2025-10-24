@@ -137,10 +137,12 @@ locale.value = 'en'     // English
 
 ## 🎮 演示
 
-运行交互式演示：
+在浏览器中打开演示：
 
 ```bash
-npm run demo
+# 直接打开 HTML 文件
+open demo/index.html
+# 或双击 demo/index.html
 ```
 
 包含的演示：
@@ -148,8 +150,6 @@ npm run demo
 - **可配置工具栏** - 切换任意工具栏按钮
 - **自定义按钮** - 添加你自己的按钮
 - **只读模式** - 内容保护
-
-[查看演示文档](demo/README.md)
 
 ## 📄 许可证
 
