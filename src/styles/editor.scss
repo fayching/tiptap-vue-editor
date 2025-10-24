@@ -1,0 +1,56 @@
+// 编辑器组件容器样式
+.tiptap-simple-editor {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  &:focus-within {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.character-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+  font-size: 12px;
+  color: #6b7280;
+  border-radius: 0 0 12px 12px;
+
+  .count-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .count-divider {
+    color: #d1d5db;
+  }
+}
+
+.editor-content {
+  min-height: 400px;
+  :deep(.tiptap-editor) {
+    
+    padding: 24px;
+    
+    // 编辑器特有的交互效果（hover 等）
+    img.editor-image {
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        transform: scale(1.01);
+      }
+    }
+  }
+}

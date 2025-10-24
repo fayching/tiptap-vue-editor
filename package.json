@@ -1,0 +1,90 @@
+{
+  "name": "tiptap-vue-editor",
+  "version": "1.0.0",
+  "description": "A feature-rich, configurable WYSIWYG editor component for Vue 3 based on Tiptap",
+  "type": "module",
+  "main": "./dist/tiptap-vue-editor.umd.js",
+  "module": "./dist/tiptap-vue-editor.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tiptap-vue-editor.es.js",
+      "require": "./dist/tiptap-vue-editor.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "tiptap",
+    "editor",
+    "wysiwyg",
+    "rich-text",
+    "text-editor",
+    "markdown",
+    "prosemirror"
+  ],
+  "author": "fayching",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fayching/tiptap-vue-editor"
+  },
+  "bugs": {
+    "url": "https://github.com/fayching/tiptap-vue-editor/issues"
+  },
+  "homepage": "https://github.com/fayching/tiptap-vue-editor#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "demo": "cd demo && npm install && npm run dev",
+    "demo:build": "cd demo && npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "vue-i18n": "^9.0.0"
+  },
+  "dependencies": {
+    "@tiptap/core": "^3.6.6",
+    "@tiptap/extension-character-count": "^3.6.6",
+    "@tiptap/extension-color": "^3.6.6",
+    "@tiptap/extension-highlight": "^3.6.6",
+    "@tiptap/extension-horizontal-rule": "^3.6.6",
+    "@tiptap/extension-image": "^3.6.6",
+    "@tiptap/extension-link": "^3.6.6",
+    "@tiptap/extension-list-item": "^3.6.6",
+    "@tiptap/extension-ordered-list": "^3.6.6",
+    "@tiptap/extension-subscript": "^3.6.6",
+    "@tiptap/extension-superscript": "^3.6.6",
+    "@tiptap/extension-table": "^3.6.6",
+    "@tiptap/extension-text-align": "^3.6.6",
+    "@tiptap/extension-text-style": "^3.6.6",
+    "@tiptap/extension-underline": "^3.6.6",
+    "@tiptap/pm": "^3.6.6",
+    "@tiptap/starter-kit": "^3.6.6",
+    "@tiptap/vue-3": "^3.6.6",
+    "lucide-vue-next": "^0.545.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "sass": "^1.90.0",
+    "typescript": "^5.9.2",
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.0.0",
+    "vue": "^3.3.9",
+    "vue-i18n": "^9.14.5",
+    "vue-tsc": "^3.0.5"
+  }
+}
+
+

@@ -1,0 +1,498 @@
+.menu-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+  border-radius: 12px 12px 0 0;
+
+  svg {
+    fill: none;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: #e5e7eb;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    &.is-active {
+      background: #3b82f6;
+      color: #fff;
+
+      &:hover {
+        background: #2563eb;
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &.menu-button-text {
+      min-width: auto;
+      padding: 0 10px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    background: #d1d5db;
+    margin: 0 4px;
+  }
+}
+
+// 下拉菜单样式
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  // 只有标题下拉菜单有固定宽度
+  &.heading-dropdown {
+    min-width: 78px;
+  }
+
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-right: 6px;
+
+    .dropdown-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    min-width: 100px;
+    margin-top: 4px;
+    padding: 4px 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    .dropdown-item {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      padding: 6px 10px;
+      border: none;
+      background: transparent;
+      color: #374151;
+      font-size: 13px;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      box-sizing: border-box;
+
+      &:hover {
+        background: #f3f4f6;
+      }
+
+      &.is-active {
+        background: #3b82f6;
+        color: #fff;
+
+        &:hover {
+          background: #2563eb;
+        }
+      }
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .list-style-preview {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+
+        &.disc {
+          color: #000;
+        }
+
+        &.circle {
+          color: #000;
+        }
+
+        &.square {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  // 列表菜单通用样式
+  .bullet-list-menu,
+  .ordered-list-menu {
+    padding: 8px;
+    min-width: 240px;
+
+    .list-style-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+    }
+
+    .list-style-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-height: 60px; // 统一高度
+
+      &:hover {
+        background: #f3f4f6;
+        border-color: #d1d5db;
+      }
+
+      &.is-active {
+        background: #e0f2fe;
+        border-color: #3b82f6;
+      }
+    }
+
+    .list-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #374151;
+
+      &::after {
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: #9ca3af;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  // 有序列表特殊布局（2行3列）
+  .ordered-list-menu {
+    .list-style-grid {
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  // 文本对齐菜单样式（单列布局）
+  .text-align-menu {
+    padding: 4px 0;
+    min-width: 120px;
+  }
+
+  // 字体大小菜单样式
+  .font-size-menu {
+    width: 100px;
+  }
+
+  // 颜色选择器样式
+  .color-menu {
+    padding: 12px;
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+      padding: 8px;
+      background: #f9fafb;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .color-reset {
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 8px;
+      padding-top: 8px;
+      font-size: 12px;
+      color: #6b7280;
+
+      &:hover {
+        color: #374151;
+        background: #f3f4f6;
+      }
+    }
+  }
+}
+
+// 颜色项目样式 - 移到外面避免嵌套问题
+.color-item {
+  width: 28px !important;
+  height: 28px !important;
+  border: 2px solid #d1d5db !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: block !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+
+  &:hover {
+    transform: scale(1.05) !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  &.is-active {
+    border: 2px solid #3b82f6 !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4) !important;
+  }
+}
+
+// 表格下拉菜单样式
+.table-dropdown {
+  position: relative;
+  min-width: 140px;
+  padding: 0;
+
+  .table-menu-primary {
+    min-width: 140px;
+    padding: 4px 0;
+
+    .table-menu-divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 4px 0;
+    }
+
+    .dropdown-item {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      width: 100%;
+      color: #374151;
+      gap: 8px;
+
+      .menu-text {
+        flex: 1;
+        text-align: left;
+      }
+
+      svg {
+        flex-shrink: 0;
+      }
+
+      .submenu-arrow {
+        transform: rotate(-90deg);
+        opacity: 0.5;
+        transition: opacity 0.2s ease;
+      }
+
+      &.no-icon {
+        .menu-text {
+          margin-left: 22px; // 14px (icon width) + 8px (gap)
+        }
+      }
+
+      &:disabled {
+        color: #9ca3af;
+        cursor: not-allowed;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    .table-delete-item {
+      color: #dc2626;
+
+      &:hover {
+        background: #fef2f2;
+        color: #b91c1c;
+      }
+
+      &:disabled {
+        color: #9ca3af;
+
+        &:hover {
+          background: transparent;
+          color: #9ca3af;
+        }
+      }
+    }
+  }
+
+  .table-menu-secondary {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 160px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    z-index: 1;
+    overflow: hidden;
+
+    .table-submenu-items {
+      padding: 6px 0;
+
+      .dropdown-item {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 8px 16px;
+        width: 100%;
+        color: #374151;
+        font-size: 13px;
+        transition: all 0.15s ease;
+
+        svg {
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background: #f0f9ff;
+          color: #0369a1;
+        }
+
+        &:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+          color: #9ca3af;
+
+          &:hover {
+            background: transparent;
+            color: #9ca3af;
+          }
+        }
+      }
+    }
+  }
+
+  .table-size-picker {
+    padding: 8px;
+
+    .size-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 1px;
+      margin-bottom: 6px;
+      padding: 4px;
+      background: #ffffff;
+
+      .size-row {
+        display: contents;
+      }
+
+      .size-cell {
+        width: 12px;
+        height: 12px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        cursor: pointer;
+        transition: all 0.1s ease;
+
+        &:hover {
+          background: #f3f4f6;
+        }
+
+        &.selected {
+          background: #3b82f6;
+          border-color: #3b82f6;
+        }
+      }
+    }
+
+    .size-info {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: #6b7280;
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .menu-bar {
+    padding: 8px;
+    gap: 2px;
+
+    .menu-button {
+      min-width: 28px;
+      height: 28px;
+      padding: 0 6px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .divider {
+      height: 20px;
+    }
+  }
+}
+
