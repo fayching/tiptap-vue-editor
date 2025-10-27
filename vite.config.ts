@@ -8,9 +8,10 @@ export default defineConfig({
     vue(),
     dts({
       insertTypesEntry: true,
-      copyDtsFiles: true,
+      copyDtsFiles: false,
+      rollupTypes: true,
       include: ['src/**/*.ts', 'src/**/*.vue'],
-      exclude: ['src/**/*.spec.ts'],
+      exclude: ['src/**/*.spec.ts', 'src/main.ts', 'src/App.vue'],
     }),
   ],
   resolve: {

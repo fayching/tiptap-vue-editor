@@ -4,7 +4,7 @@ A highly configurable Vue 3 rich text editor built on [Tiptap](https://tiptap.de
 
 📺 **[View Live Demo](#-demo)** | 📖 **[中文文档](README_CN.md)**
 
-![Tiptap Vue Editor](screenshots/basic-usage.png)
+![Tiptap Vue Editor](https://github.com/user-attachments/assets/e4b9c702-ba75-413c-bbf0-a4fe0b7767e8)
 
 ## ✨ Features
 

@@ -127,7 +127,7 @@ const toggleEditable = () => {
           Select which toolbar buttons to display:
         </p>
         <div class="config-grid">
-          <label v-for="(value, key) in toolbarConfig" :key="key" class="checkbox-label">
+          <label v-for="(_value, key) in toolbarConfig" :key="key" class="checkbox-label">
             <input type="checkbox" v-model="toolbarConfig[key as keyof ToolbarConfig]">
             <span>{{ key }}</span>
           </label>
