@@ -236,7 +236,7 @@ npm run dev
 
 **📝 Basic Usage**
 
-![Basic Usage Demo](screenshots/basic-usage.png)
+<img width="1167" height="548" alt="image" src="https://github.com/user-attachments/assets/e4b9c702-ba75-413c-bbf0-a4fe0b7767e8" />
 
 A simple editor with full toolbar featuring:
 - Rich text formatting (bold, italic, underline, etc.)
