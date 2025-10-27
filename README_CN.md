@@ -32,14 +32,14 @@ pnpm add tiptap-vue-editor
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { RichTextEditor } from 'tiptap-vue-editor'
+import { TiptapEditor } from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('<p>Hello World!</p>')
 </script>
 
 <template>
-  <RichTextEditor v-model="content" />
+  <TiptapEditor v-model="content" />
 </template>
 ```
 
@@ -50,7 +50,7 @@ const content = ref('<p>Hello World!</p>')
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { RichTextEditor } from 'tiptap-vue-editor'
+import { TiptapEditor } from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('')
@@ -69,7 +69,7 @@ const toolbarConfig = {
 </script>
 
 <template>
-  <RichTextEditor 
+  <TiptapEditor 
     v-model="content" 
     :toolbar-config="toolbarConfig"
     placeholder="开始输入..."
@@ -82,7 +82,7 @@ const toolbarConfig = {
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { RichTextEditor } from 'tiptap-vue-editor'
+import { TiptapEditor } from 'tiptap-vue-editor'
 import { Plus } from 'lucide-vue-next'
 
 const content = ref('')
@@ -103,7 +103,7 @@ const customButtons = [
 </script>
 
 <template>
-  <RichTextEditor 
+  <TiptapEditor 
     v-model="content"
     :custom-buttons="customButtons"
   />
