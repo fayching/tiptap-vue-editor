@@ -4,7 +4,8 @@
 
 📺 **[查看在线演示](#-演示)** | [English](./README.md) | 简体中文
 
-![Tiptap Vue Editor](screenshots/basic-usage.png)
+<img width="1167" height="548" alt="image" src="https://github.com/user-attachments/assets/e4b9c702-ba75-413c-bbf0-a4fe0b7767e8" />
+
 
 ## ✨ 特性
 
@@ -149,7 +150,8 @@ npm run dev
 
 **📝 基础用法**
 
-![基础用法演示](screenshots/basic-usage.png)
+![基础用法演示]([screenshots/basic-usage.png](https://github.com/user-attachments/assets/e4b9c702-ba75-413c-bbf0-a4fe0b7767e8))
+
 
 完整工具栏的简单编辑器，包含：
 - 丰富的文本格式（粗体、斜体、下划线等）
