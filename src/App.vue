@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { TiptapEditor } from './index'
+import TiptapEditor from './index'
 import type { ToolbarConfig, CustomButton } from './types'
 import './styles/editor.scss'
 import './styles/toolbar.scss'

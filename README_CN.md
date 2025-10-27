@@ -32,7 +32,7 @@ pnpm add tiptap-vue-editor
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('<p>Hello World!</p>')
@@ -50,7 +50,7 @@ const content = ref('<p>Hello World!</p>')
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('')
@@ -82,7 +82,7 @@ const toolbarConfig = {
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import { Plus } from 'lucide-vue-next'
 
 const content = ref('')

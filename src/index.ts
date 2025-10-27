@@ -1,5 +1,6 @@
 // 主要组件导出
-export { default as TiptapEditor } from './TiptapEditor.vue'
+export { default } from './TiptapEditor.vue' // 默认导出
+export { default as TiptapEditor } from './TiptapEditor.vue' // 命名导出（兼容）
 
 // 编辑器类导出（用于直接创建实例）
 export { TiptapEditor as TiptapEditorClass } from './createEditor'

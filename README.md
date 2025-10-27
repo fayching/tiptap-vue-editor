@@ -32,7 +32,7 @@ pnpm add tiptap-vue-editor
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('<p>Hello World!</p>')
@@ -43,12 +43,17 @@ const content = ref('<p>Hello World!</p>')
 </template>
 ```
 
+You can also use named import:
+```vue
+import { TiptapEditor } from 'tiptap-vue-editor'
+```
+
 ### With Toolbar Configuration
 
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import 'tiptap-vue-editor/style.css'
 
 const content = ref('')
@@ -159,7 +164,7 @@ Add your own buttons to the toolbar:
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { TiptapEditor } from 'tiptap-vue-editor'
+import TiptapEditor from 'tiptap-vue-editor'
 import { Plus } from 'lucide-vue-next'
 
 const content = ref('')
