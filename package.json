@@ -43,9 +43,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "build:demo": "vue-tsc && vite build --config vite.demo.config.ts",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "deploy": "npm run build:demo && git add dist -f && git commit -m 'chore: update demo' && git push origin demo"
   },
   "peerDependencies": {
     "vue": "^3.3.0",
