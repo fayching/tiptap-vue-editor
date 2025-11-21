@@ -1,6 +1,6 @@
 {
   "name": "tiptap-vue-editor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A feature-rich, configurable WYSIWYG editor component for Vue 3 based on Tiptap",
   "type": "module",
   "main": "./dist/tiptap-vue-editor.umd.js",

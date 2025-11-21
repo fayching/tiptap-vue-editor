@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { RichTextEditor } from './index'
+import TiptapEditor from './index'
 import type { ToolbarConfig, CustomButton } from './types'
 import './styles/editor.scss'
 import './styles/toolbar.scss'
@@ -108,7 +108,7 @@ const toggleEditable = () => {
       <!-- Demo 1: Basic Usage -->
       <div class="demo-section">
         <h2>📝 Basic Usage</h2>
-        <RichTextEditor v-model="basicContent" placeholder="Start typing..." />
+        <TiptapEditor v-model="basicContent" placeholder="Start typing..." />
         <div class="controls">
           <button class="btn btn-primary" @click="getHTML">Get HTML</button>
           <button class="btn btn-primary" @click="getText">Get Text</button>
@@ -132,7 +132,7 @@ const toggleEditable = () => {
             <span>{{ key }}</span>
           </label>
         </div>
-        <RichTextEditor 
+        <TiptapEditor 
           v-model="configurableContent" 
           :toolbar-config="toolbarConfig"
           placeholder="Try different toolbar configurations..."
@@ -159,7 +159,7 @@ const toggleEditable = () => {
         <p class="section-desc">
           Add your own custom buttons:
         </p>
-        <RichTextEditor 
+        <TiptapEditor 
           v-model="customContent" 
           :custom-buttons="customButtons"
           :toolbar-config="{
@@ -186,7 +186,7 @@ const toggleEditable = () => {
             {{ editable ? 'Editable' : 'Read-only' }}
           </span>
         </div>
-        <RichTextEditor 
+        <TiptapEditor 
           v-model="readonlyContent" 
           :editable="editable"
           :toolbar-config="{

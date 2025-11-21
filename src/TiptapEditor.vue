@@ -1,38 +1,40 @@
 <template>
-    <div class="tiptap-simple-editor">
-        <!-- 固定工具栏 -->
-        <EditorToolbar :editor="editor" :custom-buttons="customButtons" @open-link-dialog="handleOpenLinkDialog"
-            @open-image-dialog="openImageDialog" @open-media-dialog="openIframeDialog" @open-source-dialog="handleOpenSourceDialog" />
+    <div class="tiptap-editor-wrap" v-bind="$attrs">
+        <div class="tiptap-simple-editor">
+            <!-- 固定工具栏 -->
+            <EditorToolbar :editor="editor" :custom-buttons="customButtons" @open-link-dialog="handleOpenLinkDialog"
+                @open-image-dialog="openImageDialog" @open-media-dialog="openIframeDialog" @open-source-dialog="handleOpenSourceDialog" />
 
-        <!-- 编辑器内容区域 -->
-        <editor-content :editor="editor" class="editor-content" />
+            <!-- 编辑器内容区域 -->
+            <editor-content :editor="editor" class="editor-content" />
 
-        <!-- 字数统计 -->
-        <div v-if="editor && showCharCount" class="character-count">
-            <span class="count-item">
-                {{ t('editor.charCount.characters') || '字符' }}: {{ editor.storage.characterCount.characters() }}
-            </span>
-            <span class="count-divider">|</span>
-            <span class="count-item">
-                {{ t('editor.charCount.words') || '字数' }}: {{ editor.storage.characterCount.words() }}
-            </span>
+            <!-- 字数统计 -->
+            <div v-if="editor && showCharCount" class="character-count">
+                <span class="count-item">
+                    {{ t('editor.charCount.characters') || '字符' }}: {{ editor.storage.characterCount.characters() }}
+                </span>
+                <span class="count-divider">|</span>
+                <span class="count-item">
+                    {{ t('editor.charCount.words') || '字数' }}: {{ editor.storage.characterCount.words() }}
+                </span>
+            </div>
         </div>
+
+        <!-- 链接弹层 -->
+        <LinkDialog v-model:visible="showLinkDialog" :initial-data="linkData" @confirm="confirmLink" @close="closeLinkDialog" />
+
+        <!-- 图片弹层 -->
+        <ImageDialog v-model:visible="showImageDialog" :initial-data="imageData" @confirm="confirmImage"
+            @close="closeImageDialog" />
+
+        <!-- 媒体弹层 -->
+        <MediaDialog v-model:visible="showIframeDialog" :initial-data="iframeData" @confirm="confirmVideo"
+            @close="closeIframeDialog" />
+
+        <!-- 源码弹层 -->
+        <SourceDialog v-model:visible="showSourceDialog" :initial-html="currentHtml" @confirm="confirmSource"
+            @close="closeSourceDialog" />
     </div>
-
-    <!-- 链接弹层 -->
-    <LinkDialog v-model:visible="showLinkDialog" :initial-data="linkData" @confirm="confirmLink" @close="closeLinkDialog" />
-
-    <!-- 图片弹层 -->
-    <ImageDialog v-model:visible="showImageDialog" :initial-data="imageData" @confirm="confirmImage"
-        @close="closeImageDialog" />
-
-    <!-- 媒体弹层 -->
-    <MediaDialog v-model:visible="showIframeDialog" :initial-data="iframeData" @confirm="confirmVideo"
-        @close="closeIframeDialog" />
-
-    <!-- 源码弹层 -->
-    <SourceDialog v-model:visible="showSourceDialog" :initial-html="currentHtml" @confirm="confirmSource"
-        @close="closeSourceDialog" />
 </template>
 
 <script setup lang="ts">
@@ -50,6 +52,11 @@ import LinkDialog from './components/LinkDialog.vue'
 import ImageDialog from './components/ImageDialog.vue'
 import MediaDialog from './components/MediaDialog.vue'
 import SourceDialog from './components/SourceDialog.vue'
+
+// 禁用自动继承属性，手动通过 v-bind="$attrs" 应用到根元素
+defineOptions({
+  inheritAttrs: false
+})
 
 interface Props {
   modelValue: string
